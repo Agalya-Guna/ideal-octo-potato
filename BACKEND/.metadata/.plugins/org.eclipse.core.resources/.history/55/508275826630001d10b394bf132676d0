@@ -1,0 +1,4 @@
+server.port=9000
+spring.cloud.gateway.routes[0].id=VEHICLE-SERVICE
+spring.cloud.gateway.routes[0].uri=lb://VEHICLE-SERVICE
+spring.cloud.gateway.routes[0].predicates[0]=Path=/api/**

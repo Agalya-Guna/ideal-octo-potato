@@ -1,0 +1,5 @@
+package com.example.voter.repository;
+
+public interface VoterRepository {
+
+}

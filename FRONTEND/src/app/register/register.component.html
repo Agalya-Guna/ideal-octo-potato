@@ -1,0 +1,82 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="full-page">
+    <div class="container">
+    <!-- <h2 class="text-center">Register</h2> -->
+    <img src="https://cdn-icons-png.flaticon.com/128/3456/3456426.png" alt="">
+    <form class="register-form" action="" (ngSubmit)="onSubmit()"  [formGroup]="signinForm">
+  
+          <label for="id" class="form-label"><b>Enter Your Id :</b></label>
+          <input type="text" class="form-control" id="id" formControlName="id" placeholder="enter id"  [(ngModel)]="voter.id" autocomplete="off">
+          <div  *ngIf="submitted && f['id'].errors">
+          <div class="text-danger" *ngIf="f['id'].errors['required']">
+            Id is required
+          </div>
+          <div class="text-danger" *ngIf="f['id'].errors['pattern']">
+          Invalid Id
+          </div>
+        </div>
+      <label for="name" class="form-label"><b>Enter Your Name :</b></label>
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="enter name" [(ngModel)]="voter.name" autocomplete="off">
+      <div  *ngIf="submitted && f['name'].errors">
+       <div class="text-danger" *ngIf="f['name'].errors['required']">
+        Name is required
+      </div>
+      <div class="text-danger" *ngIf="f['name'].errors['pattern']">
+        Invalid Name
+      </div>
+    </div>
+   
+    <label for="gender" class="form-label"><b>Select Your Gender :</b>
+    </label>
+    <div></div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" formControlName="gender" id="gender" value="Male" [(ngModel)]="voter.gender">
+        <label class="form-check-label" for="gender">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" formControlName="gender" id="gender" value="Female" [(ngModel)]="voter.gender">
+        <label class="form-check-label" for="gender">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" formControlName="gender" id="gender" value="Others" [(ngModel)]="voter.gender">
+        <label class="form-check-label" for="gender">Others</label>
+      </div>
+   
+    <div  *ngIf="submitted && f['gender'].errors">
+        <div class="text-danger" *ngIf="f['gender'].errors['required']">
+         Please select Gender
+       </div>
+    </div><br>
+    <label for="state" class="form-label"><b>Select Your State :</b></label><br>
+      <select (change)="onSelect($any($event))" formControlName="state" [(ngModel)]="voter.state" name="state">
+          <option>--select--</option>
+          <option *ngFor="let states of state" value="{{states.id}}" >{{states.name}}</option>
+        </select><br>
+      <div  *ngIf="submitted && f['state'].errors">
+        <div class="text-danger" *ngIf="f['state'].errors['required']">
+         Please select State
+       </div>
+    </div>
+    <label for="city" class="form-label"><b>Your City :</b></label><br>
+        <select formControlName="city" [(ngModel)]="voter.city" name="city">
+          <option>--select--</option>
+          <option *ngFor="let cities of city"> {{cities.name}} </option>
+      </select>
+    
+      <div  *ngIf="submitted && f['city'].errors">
+        <div class="text-danger" *ngIf="f['city'].errors['required']">
+         Please select City
+       </div>
+    </div>
+     
+
+    <br><br>
+    <div>
+      <!-- <input type="submit" class="btn btn-login" value="REGISTER" > -->
+     <button><b>REGISTER</b></button>
+    </div><br>
+    </form>
+</div> 
+</div>   
+

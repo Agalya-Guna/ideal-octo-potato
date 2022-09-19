@@ -1,0 +1,26 @@
+package com.example.voter.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.voter.entity.Voter;
+import com.example.voter.service.VoterService;
+
+@RestController
+@RequestMapping("/api")
+public class VoterController {
+
+	@Autowired
+	VoterService service;
+	
+	@PostMapping("/vote")
+	public ResponseEntity<Voter> add(@RequestBody Voter voter){
+			Voter vote=service.add(voter);
+			return new ResponseEntity<Voter>(vote,HttpStatus.OK);
+	}
+}

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+
+    /* background: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/201304/election-commission-2-660_043013024359.jpg"); */
+        background: url("https://www.livelaw.in/h-upload/2019/11/26/1600x960_367157-election-commission-of-india-and-sc-eci-01.jpg");
+
+     max-width: 100%;
+    height: auto;
+    background-size: cover;
+    margin-bottom: 50vh;
+    background-repeat: no-repeat;
+    padding: 10px;
+    display: block;
+    opacity: 1;
+    filter:contrast(180%);
+
+}

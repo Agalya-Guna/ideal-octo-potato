@@ -1,0 +1,19 @@
+.head{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+}
+u1{
+ nav-right: current;
+}
+img{
+    height: 60px;
+    width: 60px;
+}
+.navbar-nav{
+    margin-left: 70vh;
+   
+
+}
+.navbar-nav li{
+    margin-right: 30px;
+}
